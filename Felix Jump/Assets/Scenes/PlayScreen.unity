@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 1055980711586206008, guid: ee6ea7fe0a9abaf449eee09a208195ca,
         type: 3}
       propertyPath: m_Name
-      value: BackToMenuButton
+      value: PlayButton
       objectReference: {fileID: 0}
     - target: {fileID: 4492181321671988668, guid: ee6ea7fe0a9abaf449eee09a208195ca,
         type: 3}
