@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SplashScreen.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/GameSelector.unity
+    guid: 25a9f18f3cd244742a8ebb0bc8d63d68
+  - enabled: 1
+    path: Assets/Scenes/LevelSelector.unity
+    guid: 4f005752763d54644901dc4a8f297c1b
+  - enabled: 1
+    path: Assets/Scenes/PauseScreen.unity
+    guid: a02e58cf1e748c24b87c4d3e1078892e
+  - enabled: 1
+    path: Assets/Scenes/PlayScreen.unity
+    guid: 785bb297df7591346b2a65d28e89626e
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: f150b8e97de74ee4c89e7d688f7fcebd
   m_configObjects: {}
