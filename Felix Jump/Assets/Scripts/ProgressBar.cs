@@ -7,7 +7,7 @@ public class ProgressBar : MonoBehaviour
 {
     [SerializeField] Image barImage;
 
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(StartCountdown(2.0f));
     }

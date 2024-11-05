@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayScreen.unity
     guid: 785bb297df7591346b2a65d28e89626e
   - enabled: 1
-    path: Assets/Scenes/WinScreen.unity
+    path: Assets/Scenes/GameOverScreen.unity
     guid: f150b8e97de74ee4c89e7d688f7fcebd
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
