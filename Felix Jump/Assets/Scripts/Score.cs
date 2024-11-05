@@ -27,10 +27,11 @@ public class Score : MonoBehaviour
         highScore = PlayerPrefs.GetInt("HighScore", 0);
     }
 
-    public void Update()
+    private void Update()
     {
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "GameScene" && addScore)
         {
+            Debug.Log("Score: " + score);
             scoreTimer += Time.deltaTime;
             if (scoreTimer >= 1f)
             {
@@ -38,6 +39,8 @@ public class Score : MonoBehaviour
                 scoreTimer = 0f;
             }
         }
+        else
+            scoreTimer = 0f;
     }
 
     public void AddScore(int value)

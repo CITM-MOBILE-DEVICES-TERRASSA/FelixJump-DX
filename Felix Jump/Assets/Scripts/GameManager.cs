@@ -22,11 +22,22 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        Score.Instance.ResetScore();
         Score.Instance.SetAddScore(true);
     }
 
     public void EndGame()
     {
         Score.Instance.SetAddScore(false);
+    }
+    
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
     }
 }

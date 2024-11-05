@@ -15,9 +15,15 @@ public class GameHUD : MonoBehaviour
         highScoreText.text = "High Score: " + Score.Instance.GetHighScore().ToString();
     }
 
-    public void Update()
+    private void Update()
     {
         scoreText.text = Score.Instance.GetScore().ToString();
         highScoreText.text = Score.Instance.GetHighScore().ToString();
+    }
+
+    public void ChangeToMenu()
+    {
+        ScenesManager.Instance.LoadScene("GameSelector");
+        Score.Instance.SetAddScore(false);
     }
 }

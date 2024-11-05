@@ -1141,7 +1141,7 @@ PrefabInstance:
     - target: {fileID: 271206595715564084, guid: 3d3fe9132e2114f8789d287dc1014795,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PlayScreen
+      value: LevelSelector
       objectReference: {fileID: 0}
     - target: {fileID: 271206595715564084, guid: 3d3fe9132e2114f8789d287dc1014795,
         type: 3}

@@ -9,12 +9,12 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {        
         pausePanel.SetActive(true);
-        Time.timeScale = 0;
+        GameManager.Instance.PauseGame();
     }
 
     public void ResumeGame()
     {
         pausePanel.SetActive(false);
-        Time.timeScale = 1;
+        GameManager.Instance.ResumeGame();
     }
 }

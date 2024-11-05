@@ -7,6 +7,8 @@ public class LevelSelector : MonoBehaviour
 {
     [SerializeField] private Button[] levelButtons = new Button[5];
     [SerializeField] private bool[] availableLevels = new bool[5];
+    [SerializeField] private GameObject gamePanel;
+    [SerializeField] private GameObject levelsPanel;
 
     private void Awake()
     {
@@ -18,6 +20,14 @@ public class LevelSelector : MonoBehaviour
 
     public void SelectLevel(string levelName)
     {
+        GameManager.Instance.StartGame();
+        GameManager.Instance.ResumeGame();
         ScenesManager.Instance.LoadScene(levelName);
+    }
+
+    public void ChangeToLevelSelector()
+    {
+        gamePanel.SetActive(false);
+        levelsPanel.SetActive(true);
     }
 }
