@@ -31,7 +31,7 @@ public class Score : MonoBehaviour
     {
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "GameScene" && addScore)
         {
-            Debug.Log("Score: " + score);
+            //Debug.Log("Score: " + score);
             scoreTimer += Time.deltaTime;
             if (scoreTimer >= 1f)
             {
