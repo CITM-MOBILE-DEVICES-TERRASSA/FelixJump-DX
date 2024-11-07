@@ -7,6 +7,7 @@ public class PlataformaController : MonoBehaviour
 
     public GameObject plataforma1Hole;
     public GameObject plataforma2Hole;
+    public GameObject ballPrefab; // Add a reference to the ball prefab
 
     private GameObject plataformaToSpawn;
 
@@ -37,8 +38,13 @@ public class PlataformaController : MonoBehaviour
             Instantiate(plataformaToSpawn, new Vector3(0, startingY + (distanciaSpawn * (i+1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
         }
 
-
-
+        GameObject ball = Instantiate(ballPrefab, new Vector3(0, 0.4f, -0.7f), Quaternion.identity);
+        Rigidbody rb = ball.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
     }
 
     // Update is called once per frame
