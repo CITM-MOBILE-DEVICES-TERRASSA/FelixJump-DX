@@ -14,16 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelector.unity
     guid: 4f005752763d54644901dc4a8f297c1b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PauseScreen.unity
     guid: a02e58cf1e748c24b87c4d3e1078892e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PlayScreen.unity
     guid: 785bb297df7591346b2a65d28e89626e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameOverScreen.unity
     guid: f150b8e97de74ee4c89e7d688f7fcebd
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
-    guid: a19f6dd1e71d245b299e3c29307b25db
+    guid: a2c647f0378d83a41b6f476c6ce390f7
   m_configObjects: {}

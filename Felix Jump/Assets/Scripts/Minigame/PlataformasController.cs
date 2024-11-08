@@ -5,25 +5,28 @@ using UnityEngine;
 public class PlataformaController : MonoBehaviour
 {
 
+    [Header("GameObjects")]
+    public GameObject metaFinal;
     public GameObject plataforma1Hole;
     public GameObject plataforma2Hole;
     public GameObject ballPrefab; // Add a reference to the ball prefab
 
     private GameObject plataformaToSpawn;
 
+    [Header("Generador")]
     public int numeroPlataforma = 0;
-
-
     public float distanciaSpawn = 5f;
-
     public float startingY = 0;
 
     private float lastOrientationY = 0;
+
+ 
    
     // Start is called before the first frame update
     void Start()
     {
         
+        //Plataformas
         for(int i = 0; i<numeroPlataforma; i++)
         {
             plataformaToSpawn = (Random.Range(0, 2) == 0) ? plataforma1Hole : plataforma2Hole;
@@ -38,6 +41,11 @@ public class PlataformaController : MonoBehaviour
             Instantiate(plataformaToSpawn, new Vector3(0, startingY + (distanciaSpawn * (i+1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
         }
 
+        Instantiate(metaFinal, new Vector3(0, startingY + (distanciaSpawn * (numeroPlataforma + 1)), 0), Quaternion.identity, CylinderController.instance.cylinder.transform);
+
+
+
+        //Pelota
         GameObject ball = Instantiate(ballPrefab, new Vector3(0, 0.4f, -0.7f), Quaternion.identity);
         Rigidbody rb = ball.GetComponent<Rigidbody>();
         if (rb != null)

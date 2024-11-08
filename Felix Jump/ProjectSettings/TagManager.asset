@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plataforma
   - Ball
+  - Meta
   layers:
   - Default
   - TransparentFX

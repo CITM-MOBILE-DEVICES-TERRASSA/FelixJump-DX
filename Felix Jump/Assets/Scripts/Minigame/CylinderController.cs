@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class CylinderController : MonoBehaviour
 {
 
-
+    [Header("Cilindro:")]
     public static CylinderController instance;
 
     public Slider cylinderSlider;
     public Transform cylinder;
     public float rotationSpeed = 10f;
 
+
+    [Header("Paneles")]
+    public RectTransform endPanel;
 
     private void Awake()
     {

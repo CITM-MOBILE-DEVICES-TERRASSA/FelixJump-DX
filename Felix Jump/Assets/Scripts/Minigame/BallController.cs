@@ -29,12 +29,27 @@ public class BallController : MonoBehaviour
         }
     }
 
+    //Al derectar choques
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Plataforma"))
         {
             rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
             bounceForce = originalBounceForce; // Reset bounce force after collision
+        }
+       
+    }
+
+    //Al detectar que esta dentro
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Meta"))
+        {
+            if (CylinderController.instance)
+            {
+                CylinderController.instance.endPanel.gameObject.SetActive(true);
+            }
+            //NivelCompletado
         }
     }
 }
