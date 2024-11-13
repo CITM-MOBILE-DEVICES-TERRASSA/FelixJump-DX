@@ -2,50 +2,50 @@
 
 public class FallingLeaf : MonoBehaviour
 {
-    public float minFallSpeed = 1f;         // 最小下落速度
-    public float maxFallSpeed = 2.5f;       // 最大下落速度
-    public float minSwaySpeed = 0.5f;       // 最小左右摆动速度
-    public float maxSwaySpeed = 1.5f;       // 最大左右摆动速度
-    public float minSwayAmount = 0.5f;      // 最小摆动幅度
-    public float maxSwayAmount = 2f;        // 最大摆动幅度
+    public float minFallSpeed = 1f;         // Minimum fall speed
+    public float maxFallSpeed = 2.5f;       // Maximum fall speed
+    public float minSwaySpeed = 0.5f;       // Minimum sway speed
+    public float maxSwaySpeed = 1.5f;       // Maximum sway speed
+    public float minSwayAmount = 0.5f;      // Minimum sway amount
+    public float maxSwayAmount = 2f;        // Maximum sway amount
 
-    private float fallSpeed;                // 实际下落速度
-    private float swaySpeed;                // 实际左右摆动速度
-    private float swayAmount;               // 实际摆动幅度
-    private float swayOffset;               // 随机偏移，用于让每片叶子不同步
+    private float fallSpeed;                // Actual fall speed
+    private float swaySpeed;                // Actual sway speed
+    private float swayAmount;               // Actual sway amount
+    private float swayOffset;               // Random offset to desynchronize each leaf
 
     void Start()
     {
-        // 随机化下落和摆动的参数
+        // Randomize fall and sway parameters
         fallSpeed = Random.Range(minFallSpeed, maxFallSpeed);
         swaySpeed = Random.Range(minSwaySpeed, maxSwaySpeed);
         swayAmount = Random.Range(minSwayAmount, maxSwayAmount);
 
-        // 随机偏移左右摆动，让每片叶子不同步
+        // Randomize sway offset to desynchronize each leaf
         swayOffset = Random.Range(0f, 0.5f * Mathf.PI);
     }
 
     void Update()
     {
-        // 计算叶子的左右摆动位移
+        // Calculate leaf's sway displacement
         float sway = Mathf.Sin(Time.time * swaySpeed + swayOffset) * swayAmount;
 
-        // 计算叶子的下落位置
+        // Calculate leaf's fall position
         Vector3 fallPosition = transform.position;
-        fallPosition.x += sway * Time.deltaTime;        // 更新左右位置
-        fallPosition.y -= fallSpeed * Time.deltaTime;   // 更新下落位置
+        fallPosition.x += sway * Time.deltaTime;        // Update horizontal position
+        fallPosition.y -= fallSpeed * Time.deltaTime;   // Update vertical position
         fallPosition.z = Mathf.Clamp(fallPosition.z, -0.4f, 0.4f);
 
-
-        // 更新叶子位置
+        // Update leaf's position
         transform.position = fallPosition;
 
-        // 如果叶子超出屏幕下方，可以选择重新生成到顶部（实现循环效果）
-        if (fallPosition.y < -3) // 假设 -10 是屏幕下边界
+        // If leaf goes below the screen, optionally respawn it at the top (loop effect)
+        if (fallPosition.y < -3) // Assume -10 is the bottom screen boundary
         {
             Destroy(gameObject);
-            //fallPosition.y = 10;  // 重新生成在顶部
+            //fallPosition.y = 10;  // Respawn at the top
             //transform.position = fallPosition;
         }
     }
 }
+
