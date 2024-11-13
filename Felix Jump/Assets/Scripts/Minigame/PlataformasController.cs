@@ -10,6 +10,8 @@ public class PlataformaController : MonoBehaviour
     public GameObject plataforma1Hole;
     public GameObject plataforma2Hole;
     public GameObject ballPrefab; // Add a reference to the ball prefab
+    public GameObject plataformaPinchos1Hole;
+    public GameObject plataformaPinchos2Hole;
 
     private GameObject plataformaToSpawn;
 
@@ -34,20 +36,37 @@ public class PlataformaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         //Plataformas
-        for(int i = 0; i<numeroPlataforma; i++)
+        for (int i = 0; i < numeroPlataforma; i++)
         {
-            plataformaToSpawn = (Random.Range(0, 2) == 0) ? plataforma1Hole : plataforma2Hole;
+            // Elegir plataforma al azar entre las cuatro opciones
+            int plataformaAleatoria = Random.Range(0, 4);
+            if (plataformaAleatoria == 0)
+            {
+                plataformaToSpawn = plataforma1Hole;
+            }
+            else if (plataformaAleatoria == 1)
+            {
+                plataformaToSpawn = plataforma2Hole;
+            }
+            else if (plataformaAleatoria == 2)
+            {
+                plataformaToSpawn = plataformaPinchos1Hole;
+            }
+            else
+            {
+                plataformaToSpawn = plataformaPinchos2Hole;
+            }
 
+            // Asignar rotaci�n aleatoria manteniendo una diferencia m�nima de 45 grados
             float rotationY = Random.Range(45, 315);
-            while( Mathf.Abs(rotationY - lastOrientationY) < 45)
+            while (Mathf.Abs(rotationY - lastOrientationY) < 45)
             {
                 rotationY = Random.Range(45, 315);
             }
             lastOrientationY = rotationY;
 
-            Instantiate(plataformaToSpawn, new Vector3(0, startingY + (distanciaSpawn * (i+1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+            Instantiate(plataformaToSpawn, new Vector3(0, startingY + (distanciaSpawn * (i + 1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
         }
 
         if (aparecerHojas)
@@ -73,18 +92,6 @@ public class PlataformaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //contador += Time.deltaTime;
-        //if (contador > 5)
-        //{
-        //    GameObject plataforma = Instantiate(plataforma1Hole, CylinderController.instance.cylinder.transform);
-        //    plataformas.Add(plataforma.transform);
-        //    contador = 0;
-        //}
-
-
-        //foreach(Transform plataforma in plataformas)
-        //{
-        //    plataforma.transform.position = new Vector3(0, plataforma.transform.position.y - (movementSpeed * Time.deltaTime), 0);
-        //}
+        // Aqu� puedes a�adir l�gica adicional si es necesario.
     }
 }
