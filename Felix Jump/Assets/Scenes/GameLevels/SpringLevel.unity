@@ -2181,9 +2181,19 @@ MonoBehaviour:
     type: 3}
   plataformaPinchos2Hole: {fileID: 1066791729911798355, guid: 77311243428ab5245928e92c859c8e13,
     type: 3}
+  plataformaPinchos1HoleVariant: {fileID: 6126958140927706652, guid: 885faac43b96cf740a207bd5d167dc92,
+    type: 3}
+  plataformaPinchos2HoleVariant: {fileID: 8228268651063663742, guid: bec02a1454ab4484cbb6f8dfcf08fa50,
+    type: 3}
   numeroPlataforma: 8
   distanciaSpawn: 0.8
   startingY: 0
+  leafSpawner: {fileID: 0}
+  redGameObject: {fileID: 0}
+  bolaNieveGameObject: {fileID: 0}
+  aparecerHojas: 0
+  aparecerRedes: 0
+  aparecerBolasNieve: 0
 --- !u!114 &1105189551
 MonoBehaviour:
   m_ObjectHideFlags: 0

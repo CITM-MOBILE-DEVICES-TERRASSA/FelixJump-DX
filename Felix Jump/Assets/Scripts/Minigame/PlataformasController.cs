@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PlataformaController : MonoBehaviour
 {
-
     [Header("GameObjects")]
     public GameObject metaFinal;
     public GameObject plataforma1Hole;
     public GameObject plataforma2Hole;
-    public GameObject ballPrefab; // Add a reference to the ball prefab
+    public GameObject ballPrefab; // Referencia a la pelota
     public GameObject plataformaPinchos1Hole;
     public GameObject plataformaPinchos2Hole;
+    public GameObject plataformaPinchos1HoleVariant;
+    public GameObject plataformaPinchos2HoleVariant;
 
     private GameObject plataformaToSpawn;
 
@@ -23,8 +24,6 @@ public class PlataformaController : MonoBehaviour
     private float lastOrientationY = 0;
 
     [Header("Obstaculos")]
-
-    //public GameObject pinchosGameObject;
     public GameObject leafSpawner;
     public GameObject netGameObject;
     public GameObject snowBallGameObject;
@@ -41,8 +40,8 @@ public class PlataformaController : MonoBehaviour
         //Plataformas
         for (int i = 0; i < numeroPlataforma; i++)
         {
-            // Elegir plataforma al azar entre las cuatro opciones
-            int plataformaAleatoria = Random.Range(0, 4);
+            // Elegir plataforma al azar entre las seis opciones
+            int plataformaAleatoria = Random.Range(0, 6);
             if (plataformaAleatoria == 0)
             {
                 plataformaToSpawn = plataforma1Hole;
@@ -55,12 +54,20 @@ public class PlataformaController : MonoBehaviour
             {
                 plataformaToSpawn = plataformaPinchos1Hole;
             }
-            else
+            else if (plataformaAleatoria == 3)
             {
                 plataformaToSpawn = plataformaPinchos2Hole;
             }
+            else if (plataformaAleatoria == 4)
+            {
+                plataformaToSpawn = plataformaPinchos1HoleVariant;
+            }
+            else
+            {
+                plataformaToSpawn = plataformaPinchos2HoleVariant;
+            }
 
-            // Asignar rotaci�n aleatoria manteniendo una diferencia m�nima de 45 grados
+            // Asignar rotación aleatoria manteniendo una diferencia mínima de 45 grados
             float rotationY = Random.Range(45, 315);
             while (Mathf.Abs(rotationY - lastOrientationY) < 45)
             {
@@ -104,15 +111,13 @@ public class PlataformaController : MonoBehaviour
 
         if (aparecerLeafes)
         {
-            Instantiate(leafSpawner, new Vector3(0, startingY + (distanciaSpawn * (numeroPlataforma)), 0), Quaternion.identity, CylinderController.instance.cylinder.transform);
+            Instantiate(leafSpawner, new Vector3(0, startingY + (distanciaSpawn * numeroPlataforma), 0), Quaternion.identity, CylinderController.instance.cylinder.transform);
         }
 
+        // Instanciar la meta final
         Instantiate(metaFinal, new Vector3(0, startingY + (distanciaSpawn * (numeroPlataforma + 1)), 0), Quaternion.identity, CylinderController.instance.cylinder.transform);
 
-        
-
-
-        //Pelota
+        // Instanciar pelota
         GameObject ball = Instantiate(ballPrefab, new Vector3(0, 0.4f, -0.7f), Quaternion.identity);
         Rigidbody rb = ball.GetComponent<Rigidbody>();
         if (rb != null)
@@ -125,6 +130,6 @@ public class PlataformaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Aqu� puedes a�adir l�gica adicional si es necesario.
+        // Aquí puedes añadir lógica adicional si es necesario.
     }
 }
