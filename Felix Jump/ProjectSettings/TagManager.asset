@@ -8,6 +8,8 @@ TagManager:
   - Ball
   - Meta
   - MainCylindre
+  - Trampa
+
   layers:
   - Default
   - TransparentFX

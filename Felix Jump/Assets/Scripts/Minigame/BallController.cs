@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallController : MonoBehaviour
@@ -11,6 +12,9 @@ public class BallController : MonoBehaviour
     private float lastTapTime = 0f;
     private float doubleTapDelay = 0.3f; // Time window for double-tap
 
+    public GameObject ballPrefab;
+
+    PlataformaController plataformaController;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,7 +41,11 @@ public class BallController : MonoBehaviour
             rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
             bounceForce = originalBounceForce; // Reset bounce force after collision
         }
-       
+
+        if (collision.gameObject.CompareTag("Trampa"))
+        {
+            transform.position = new Vector3(0, 0.4f, -0.7f);
+        }
     }
 
     //Al detectar que esta dentro
