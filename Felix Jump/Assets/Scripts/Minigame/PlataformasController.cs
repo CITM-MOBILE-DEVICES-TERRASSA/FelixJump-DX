@@ -26,12 +26,14 @@ public class PlataformaController : MonoBehaviour
 
     //public GameObject pinchosGameObject;
     public GameObject leafSpawner;
-    public GameObject redGameObject;
-    public GameObject bolaNieveGameObject;
+    public GameObject netGameObject;
+    public GameObject snowBallGameObject;
+    public GameObject scytheGameObject;
 
-    public bool aparecerHojas;
-    public bool aparecerRedes;
-    public bool aparecerBolasNieve;
+    public bool aparecerLeafes = false;
+    public bool aparecerNets = false;
+    public bool aparecerSnowBalls = false;
+    public bool aparecerScythes = false;
    
     // Start is called before the first frame update
     void Start()
@@ -67,9 +69,40 @@ public class PlataformaController : MonoBehaviour
             lastOrientationY = rotationY;
 
             Instantiate(plataformaToSpawn, new Vector3(0, startingY + (distanciaSpawn * (i + 1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+
+            float proabSpawnObstacle = Random.Range(0, 100);
+            if(proabSpawnObstacle < 50)
+            {
+                int cantidadObstaculos = 0;
+                if (aparecerNets) cantidadObstaculos++;
+                if (aparecerSnowBalls) cantidadObstaculos++;
+                if (aparecerScythes) cantidadObstaculos++;
+
+                proabSpawnObstacle = Random.Range(1, cantidadObstaculos);
+                Debug.Log("Proabilidad random: " + cantidadObstaculos);
+                switch (proabSpawnObstacle)
+                {
+                    case 1:
+                        Instantiate(netGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1))-(distanciaSpawn/2)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+                        Debug.Log("Spawn net");
+                        //net.transform.localPosition = new Vector3(net.transform.position.x - 0.25f, net.transform.position.y, net.transform.position.z);
+                        break;
+                    case 2:
+                        Instantiate(snowBallGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)-1) + (1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+                        Debug.Log("Spawn snow");
+                        break;
+                    case 3:
+                        Instantiate(scytheGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1) - 1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+                        Debug.Log("Spawn scythe");
+                        break;
+                }
+
+                
+            }
+        
         }
 
-        if (aparecerHojas)
+        if (aparecerLeafes)
         {
             Instantiate(leafSpawner, new Vector3(0, startingY + (distanciaSpawn * (numeroPlataforma)), 0), Quaternion.identity, CylinderController.instance.cylinder.transform);
         }

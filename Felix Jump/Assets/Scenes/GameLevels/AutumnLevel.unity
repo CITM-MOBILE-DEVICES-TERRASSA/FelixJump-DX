@@ -2177,16 +2177,22 @@ MonoBehaviour:
     type: 3}
   ballPrefab: {fileID: 353864344936485748, guid: 4837c6fad35dac84e8e642b9b0f59ae5,
     type: 3}
+  plataformaPinchos1Hole: {fileID: 5350833560861813502, guid: 09518e43d2fddf84282d9d962c8eed62,
+    type: 3}
+  plataformaPinchos2Hole: {fileID: 1066791729911798355, guid: 77311243428ab5245928e92c859c8e13,
+    type: 3}
   numeroPlataforma: 12
   distanciaSpawn: 0.8
   startingY: 0
   leafSpawner: {fileID: 928102222790464432, guid: aaa1ca05570c5c643b4d3d3edb5f386b,
     type: 3}
-  redGameObject: {fileID: 0}
-  bolaNieveGameObject: {fileID: 0}
-  aparecerHojas: 1
-  aparecerRedes: 0
-  aparecerBolasNieve: 0
+  netGameObject: {fileID: 0}
+  snowBallGameObject: {fileID: 0}
+  scytheGameObject: {fileID: 0}
+  aparecerLeafes: 0
+  aparecerNets: 0
+  aparecerSnowBalls: 0
+  aparecerScythes: 0
 --- !u!114 &1105189551
 MonoBehaviour:
   m_ObjectHideFlags: 0
