@@ -988,58 +988,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 557203790}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &672004199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 672004201}
-  - component: {fileID: 672004200}
-  m_Layer: 0
-  m_Name: LeafSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &672004200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672004199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2a91e577e74ddb4d9da5c6a92ba8d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leafPrefab: {fileID: 6136598123077896619, guid: b15309e100d4c3e47b82868e32ac28ca,
-    type: 3}
-  initialLeafCount: 0
-  spawnInterval: 5
-  spawnArea: {x: 0, y: 10, z: -0.5}
-  targetParent: {fileID: 1847750459}
-  randomScaleRange: {x: 2.5, y: 3.5}
-  randomRotationRange: {x: -30, y: 30}
---- !u!4 &672004201
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672004199}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.4, z: -0.61}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &734701053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,6 +2180,13 @@ MonoBehaviour:
   numeroPlataforma: 12
   distanciaSpawn: 0.8
   startingY: 0
+  leafSpawner: {fileID: 928102222790464432, guid: aaa1ca05570c5c643b4d3d3edb5f386b,
+    type: 3}
+  redGameObject: {fileID: 0}
+  bolaNieveGameObject: {fileID: 0}
+  aparecerHojas: 1
+  aparecerRedes: 0
+  aparecerBolasNieve: 0
 --- !u!114 &1105189551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3428,7 +3383,7 @@ GameObject:
   - component: {fileID: 1847750459}
   m_Layer: 0
   m_Name: MainCylindre
-  m_TagString: Untagged
+  m_TagString: MainCylindre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3957,4 +3912,3 @@ SceneRoots:
   - {fileID: 1696016188}
   - {fileID: 275035452}
   - {fileID: 1657363088}
-  - {fileID: 672004201}
