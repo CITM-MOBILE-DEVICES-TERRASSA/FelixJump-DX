@@ -20,6 +20,9 @@ public class LeafSpawner : MonoBehaviour
         {
             SpawnLeaf();
         }
+
+        targetParent = GameObject.FindGameObjectWithTag("MainCylindre").transform;
+
     }
 
     void Update()

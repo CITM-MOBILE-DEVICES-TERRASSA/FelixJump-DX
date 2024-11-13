@@ -20,7 +20,16 @@ public class PlataformaController : MonoBehaviour
 
     private float lastOrientationY = 0;
 
- 
+    [Header("Obstaculos")]
+
+    //public GameObject pinchosGameObject;
+    public GameObject leafSpawner;
+    public GameObject redGameObject;
+    public GameObject bolaNieveGameObject;
+
+    public bool aparecerHojas;
+    public bool aparecerRedes;
+    public bool aparecerBolasNieve;
    
     // Start is called before the first frame update
     void Start()
@@ -41,8 +50,14 @@ public class PlataformaController : MonoBehaviour
             Instantiate(plataformaToSpawn, new Vector3(0, startingY + (distanciaSpawn * (i+1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
         }
 
+        if (aparecerHojas)
+        {
+            Instantiate(leafSpawner, new Vector3(0, startingY + (distanciaSpawn * (numeroPlataforma)), 0), Quaternion.identity, CylinderController.instance.cylinder.transform);
+        }
+
         Instantiate(metaFinal, new Vector3(0, startingY + (distanciaSpawn * (numeroPlataforma + 1)), 0), Quaternion.identity, CylinderController.instance.cylinder.transform);
 
+        
 
 
         //Pelota

@@ -114,5 +114,5 @@ MonoBehaviour:
   maxFallSpeed: 0.5
   minSwaySpeed: 0.5
   maxSwaySpeed: 1
-  minSwayAmount: 0.5
-  maxSwayAmount: 0.5
+  minSwayAmount: 0.41
+  maxSwayAmount: 0.41
