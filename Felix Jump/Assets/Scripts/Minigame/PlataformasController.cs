@@ -86,13 +86,13 @@ public class PlataformaController : MonoBehaviour
                 if (aparecerScythes) cantidadObstaculos++;
 
                 proabSpawnObstacle = Random.Range(1, cantidadObstaculos);
-                Debug.Log("Proabilidad random: " + cantidadObstaculos);
                 switch (proabSpawnObstacle)
                 {
                     case 1:
-                        Instantiate(netGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1))-(distanciaSpawn/2)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
-                        Debug.Log("Spawn net");
-                        //net.transform.localPosition = new Vector3(net.transform.position.x - 0.25f, net.transform.position.y, net.transform.position.z);
+                        if(i != 0 && i != 1)
+                        {
+                            Instantiate(netGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)) - (distanciaSpawn / 2)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+                        }
                         break;
                     case 2:
                         Instantiate(snowBallGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)-1) + (1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
