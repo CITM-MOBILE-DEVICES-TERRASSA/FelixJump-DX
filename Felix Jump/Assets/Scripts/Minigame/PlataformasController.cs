@@ -5,6 +5,8 @@ using TMPro;
 
 public class PlataformaController : MonoBehaviour
 {
+    public static PlataformaController instance;
+
     [Header("GameObjects")]
     public GameObject metaFinal;
     public GameObject plataforma1Hole;
@@ -40,8 +42,20 @@ public class PlataformaController : MonoBehaviour
 
     [Header("Timer")]
     public float countdownTime = 90f;
-    private bool timerRunning = true;
-    public TextMeshProUGUI countdownText; // Add this line
+    public bool timerRunning = true;
+    public TextMeshProUGUI countdownText; 
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -154,7 +168,7 @@ public class PlataformaController : MonoBehaviour
 
 
         CheckBallPosition();
-        CheckBallReachedGoal();
+        //CheckBallReachedGoal();
     }
 
     void CheckBallPosition()
@@ -166,7 +180,7 @@ public class PlataformaController : MonoBehaviour
             float platformBaseY = currentPlatform * distanciaSpawn;
             float newTargetY = startingY + platformBaseY;
 
-            if (ballY >= platformBaseY + 0.2f && ballY <= platformBaseY + 0.6f && !visitedPlatforms.Contains((int)currentPlatform))
+            if (currentPlatform > 0 && ballY >= platformBaseY + 0.2f && ballY <= platformBaseY + 0.6f && !visitedPlatforms.Contains((int)currentPlatform))
             {
                 visitedPlatforms.Add((int)currentPlatform);
                 Score.Instance.AddScore(20);
@@ -175,18 +189,18 @@ public class PlataformaController : MonoBehaviour
         }
     }
 
-    void CheckBallReachedGoal()
-    {
-        if (ball != null && metaFinal != null)
-        {
-            float distanceToGoal = Vector3.Distance(ball.transform.position, metaFinal.transform.position);
-            if (distanceToGoal < 1.0f)
-            {
-                timerRunning = false;
-                int bonusScore = Mathf.CeilToInt(countdownTime) * 10;
-                Score.Instance.AddScore(bonusScore);
-                Debug.Log("Bonus Score: " + bonusScore);
-            }
-        }
-    }
+    // void CheckBallReachedGoal()
+    // {
+    //     if (ball != null && metaFinal != null)
+    //     {
+    //         float distanceToGoal = Vector3.Distance(ball.transform.position, metaFinal.transform.position);
+    //         if (distanceToGoal < 1.0f)
+    //         {
+    //             timerRunning = false;
+    //             int bonusScore = Mathf.CeilToInt(countdownTime) * 10;
+    //             Score.Instance.AddScore(bonusScore);
+    //             Debug.Log("Bonus Score: " + bonusScore);
+    //         }
+    //     }
+    // }
 }

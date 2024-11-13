@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
@@ -34,7 +35,6 @@ public class Score : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        PlayerPrefs.SetInt("MaxAutumnScore", 0);
 
         maxAutumnScore = PlayerPrefs.GetInt("MaxAutumnScore", 0);
         maxHalloweenScore = PlayerPrefs.GetInt("MaxHalloweenScore", 0);
@@ -121,6 +121,80 @@ public class Score : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void UpdateScoreWithBonus(string levelName, int bonusScore)
+    {
+        bool maxScoreUpdated = false;
+
+        switch (levelName)
+        {
+            case "AutumnLevel":
+                autumnScore += bonusScore;
+                if (autumnScore > maxAutumnScore)
+                {
+                    maxAutumnScore = autumnScore;
+                    PlayerPrefs.SetInt("MaxAutumnScore", maxAutumnScore);
+                    maxScoreUpdated = true;
+                }
+                break;
+            case "HalloweenLevel":
+                halloweenScore += bonusScore;
+                if (halloweenScore > maxHalloweenScore)
+                {
+                    maxHalloweenScore = halloweenScore;
+                    PlayerPrefs.SetInt("MaxHalloweenScore", maxHalloweenScore);
+                    maxScoreUpdated = true;
+                }
+                break;
+            case "SpringLevel":
+                springScore += bonusScore;
+                if (springScore > maxSpringScore)
+                {
+                    maxSpringScore = springScore;
+                    PlayerPrefs.SetInt("MaxSpringScore", maxSpringScore);
+                    maxScoreUpdated = true;
+                }
+                break;
+            case "WinterLevel":
+                winterScore += bonusScore;
+                if (winterScore > maxWinterScore)
+                {
+                    maxWinterScore = winterScore;
+                    PlayerPrefs.SetInt("MaxWinterScore", maxWinterScore);
+                    maxScoreUpdated = true;
+                }
+                break;
+            case "SummerLevel":
+                summerScore += bonusScore;
+                if (summerScore > maxSummerScore)
+                {
+                    maxSummerScore = summerScore;
+                    PlayerPrefs.SetInt("MaxSummerScore", maxSummerScore);
+                    maxScoreUpdated = true;
+                }
+                break;
+        }
+
+        if (maxScoreUpdated)
+        {
+            UpdateMaxTotalScore();
+        }
+
+        PlayerPrefs.Save();
+    }
+
+    public void HandleLevelCompletion(string currentScene, float countdownTime)
+    {
+        int bonusScore = Mathf.CeilToInt(countdownTime) * 10;
+        UpdateScoreWithBonus(currentScene, bonusScore);
+        Debug.Log("Bonus Score: " + bonusScore);
+
+        TextMeshProUGUI highScoreText = CylinderController.instance.endPanel.transform.Find("EndPanelHighScoreText").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI currentScoreText = CylinderController.instance.endPanel.transform.Find("EndPanelCurrentScoreText").GetComponent<TextMeshProUGUI>();
+
+        highScoreText.text = "High Score: " + GetHighScore(currentScene).ToString();
+        currentScoreText.text = "Score: " + GetScore(currentScene).ToString();
+    }
+
     private void UpdateMaxTotalScore()
     {
         maxTotalScore = maxAutumnScore + maxHalloweenScore + maxSpringScore + maxWinterScore + maxSummerScore;
@@ -163,5 +237,9 @@ public class Score : MonoBehaviour
             default:
                 return 0;
         }
+    }
+    public int GetTotalScore()
+    {
+        return maxTotalScore;
     }
 }

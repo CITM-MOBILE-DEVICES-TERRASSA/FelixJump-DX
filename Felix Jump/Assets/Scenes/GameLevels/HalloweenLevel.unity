@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 734701055}
   - component: {fileID: 734701054}
   m_Layer: 5
-  m_Name: Score
+  m_Name: EndPanelCurrentScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1491,7 +1491,7 @@ GameObject:
   - component: {fileID: 894664433}
   - component: {fileID: 894664432}
   m_Layer: 5
-  m_Name: HighScore
+  m_Name: EndPanelHighScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1993,12 +1993,12 @@ RectTransform:
   - {fileID: 750212362}
   - {fileID: 356836641}
   - {fileID: 2116418056}
+  - {fileID: 914624698}
   - {fileID: 1003372721}
   - {fileID: 1027854400}
   - {fileID: 1817073955}
   - {fileID: 1122127555}
   - {fileID: 1050134489}
-  - {fileID: 914624698}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallController : MonoBehaviour
@@ -13,6 +14,8 @@ public class BallController : MonoBehaviour
     private float doubleTapDelay = 0.3f; // Time window for double-tap
 
     public GameObject ballPrefab;
+
+    private bool bonusScoreAdded = false; // Add this line
 
     PlataformaController plataformaController;
     void Start()
@@ -51,13 +54,22 @@ public class BallController : MonoBehaviour
     //Al detectar que esta dentro
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Meta"))
+        if (other.CompareTag("Meta") && !bonusScoreAdded)
         {
             if (CylinderController.instance)
             {
+                Debug.Log("Nivel Completado");
                 CylinderController.instance.endPanel.gameObject.SetActive(true);
+
+                // Stop the timer immediately
+                PlataformaController.instance.timerRunning = false;
+
+                // Handle level completion
+                string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+                Score.Instance.HandleLevelCompletion(currentScene, PlataformaController.instance.countdownTime);
+
+                bonusScoreAdded = true;
             }
-            //NivelCompletado
         }
     }
 }
