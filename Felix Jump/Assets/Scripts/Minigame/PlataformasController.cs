@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlataformaController : MonoBehaviour
 {
@@ -33,10 +34,20 @@ public class PlataformaController : MonoBehaviour
     public bool aparecerNets = false;
     public bool aparecerSnowBalls = false;
     public bool aparecerScythes = false;
-   
+
+    private HashSet<int> visitedPlatforms;
+    private GameObject ball;
+
+    [Header("Timer")]
+    public float countdownTime = 90f;
+    private bool timerRunning = true;
+    public TextMeshProUGUI countdownText; // Add this line
+
     // Start is called before the first frame update
     void Start()
     {
+        visitedPlatforms = new HashSet<int>();
+
         //Plataformas
         for (int i = 0; i < numeroPlataforma; i++)
         {
@@ -103,10 +114,7 @@ public class PlataformaController : MonoBehaviour
                         Debug.Log("Spawn scythe");
                         break;
                 }
-
-                
             }
-        
         }
 
         if (aparecerLeafes)
@@ -118,7 +126,7 @@ public class PlataformaController : MonoBehaviour
         Instantiate(metaFinal, new Vector3(0, startingY + (distanciaSpawn * (numeroPlataforma + 1)), 0), Quaternion.identity, CylinderController.instance.cylinder.transform);
 
         // Instanciar pelota
-        GameObject ball = Instantiate(ballPrefab, new Vector3(0, 0.4f, -0.7f), Quaternion.identity);
+        ball = Instantiate(ballPrefab, new Vector3(0, 0.4f, -0.7f), Quaternion.identity);
         Rigidbody rb = ball.GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -130,6 +138,53 @@ public class PlataformaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Aquí puedes añadir lógica adicional si es necesario.
+        if (timerRunning)
+        {
+            countdownTime -= Time.deltaTime;
+            if (countdownTime <= 0)
+            {
+                countdownTime = 0;
+                timerRunning = false;
+            }
+        }
+
+        // Update the countdown text
+        countdownText.text = Mathf.Ceil(countdownTime).ToString();
+
+        CheckBallPosition();
+        CheckBallReachedGoal();
+    }
+
+    void CheckBallPosition()
+    {
+        if (ball != null)
+        {
+            float ballY = ball.transform.position.y;
+            float currentPlatform = Mathf.Floor(ballY / distanciaSpawn);
+            float platformBaseY = currentPlatform * distanciaSpawn;
+            float newTargetY = startingY + platformBaseY;
+
+            if (ballY >= platformBaseY + 0.2f && ballY <= platformBaseY + 0.6f && !visitedPlatforms.Contains((int)currentPlatform))
+            {
+                visitedPlatforms.Add((int)currentPlatform);
+                Score.Instance.AddScore(20);
+                Debug.Log("Score: + 20");
+            }
+        }
+    }
+
+    void CheckBallReachedGoal()
+    {
+        if (ball != null && metaFinal != null)
+        {
+            float distanceToGoal = Vector3.Distance(ball.transform.position, metaFinal.transform.position);
+            if (distanceToGoal < 1.0f)
+            {
+                timerRunning = false;
+                int bonusScore = Mathf.CeilToInt(countdownTime) * 10;
+                Score.Instance.AddScore(bonusScore);
+                Debug.Log("Bonus Score: " + bonusScore);
+            }
+        }
     }
 }

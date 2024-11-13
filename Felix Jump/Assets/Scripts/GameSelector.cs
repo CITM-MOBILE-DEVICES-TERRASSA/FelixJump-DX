@@ -20,7 +20,7 @@ public class GameSelector : MonoBehaviour
 
     private void Start()
     {
-        highScoreText.text = "High Score: " + Score.Instance.GetHighScore().ToString();
+        // highScoreText.text = "High Score: " + Score.Instance.GetHighScore().ToString();
     }
 
     public void SelectGame(string gameName)

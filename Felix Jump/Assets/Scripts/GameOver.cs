@@ -13,8 +13,8 @@ public class GameOver : MonoBehaviour
     public void Lose()
     {
         text.text = "You Lose!";
-        scoreText.text = "Score: " + Score.Instance.GetScore().ToString();
-        highScoreText.text = "High Score: " + Score.Instance.GetHighScore().ToString();
+        // scoreText.text = "Score: " + Score.Instance.GetScore().ToString();
+        // highScoreText.text = "High Score: " + Score.Instance.GetHighScore().ToString();
         gameOverPanel.SetActive(true);
         GameManager.Instance.EndGame();
     }
@@ -22,8 +22,8 @@ public class GameOver : MonoBehaviour
     public void Win()
     {
         text.text = "You Win!";
-        scoreText.text = "Score: " + Score.Instance.GetScore().ToString();
-        highScoreText.text = "High Score: " + Score.Instance.GetHighScore().ToString();
+        // scoreText.text = "Score: " + Score.Instance.GetScore().ToString();
+        // highScoreText.text = "High Score: " + Score.Instance.GetHighScore().ToString();
         gameOverPanel.SetActive(true);
         GameManager.Instance.EndGame();
     }

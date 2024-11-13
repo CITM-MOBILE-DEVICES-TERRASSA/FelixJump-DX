@@ -11,19 +11,24 @@ public class GameHUD : MonoBehaviour
 
     private void Start()
     {
-        scoreText.text = "Score: " + Score.Instance.GetScore().ToString();
-        highScoreText.text = "High Score: " + Score.Instance.GetHighScore().ToString();
+        UpdateScoreTexts();
     }
 
     private void Update()
     {
-        scoreText.text = Score.Instance.GetScore().ToString();
-        highScoreText.text = Score.Instance.GetHighScore().ToString();
+        UpdateScoreTexts();
+    }
+
+    private void UpdateScoreTexts()
+    {
+        string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        scoreText.text = Score.Instance.GetScore(currentScene).ToString();
+        highScoreText.text = Score.Instance.GetHighScore(currentScene).ToString();
     }
 
     public void ChangeToMenu()
     {
         ScenesManager.Instance.LoadScene("GameSelector");
-        Score.Instance.SetAddScore(false);
+        // Score.Instance.SetAddScore(false);
     }
 }
