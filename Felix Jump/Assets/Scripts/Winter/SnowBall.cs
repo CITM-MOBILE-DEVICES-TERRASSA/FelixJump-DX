@@ -14,6 +14,12 @@ public class SnowBall : MonoBehaviour
     // Límite máximo para la posición de la bola de nieve en el eje X y Z
     public float positionLimit = 0.5f;
 
+
+    private void Start()
+    {
+        ball = GameObject.FindGameObjectWithTag("Ball");
+    }
+
     void Update()
     {
         //MoveInCircles();
@@ -28,6 +34,7 @@ public class SnowBall : MonoBehaviour
             {
                 // Aumenta el tamaño de la bola de nieve
                 transform.localScale += Vector3.one * growthSpeed * Time.deltaTime;
+                transform.parent.Rotate(new Vector3(0, rotationSpeed * Time.deltaTime, 0));
             }
         }
     }
