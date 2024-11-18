@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
-using TMPro;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -12,16 +9,16 @@ public class BallController : MonoBehaviour
     private float originalBounceForce;
     private Rigidbody rb;
     private float lastTapTime = 0f;
-    private float doubleTapDelay = 0.3f; // Time window for double-tap
+    private float doubleTapDelay = 0.3f; // Tiempo para doble tap
 
     public GameObject ballPrefab;
-
-    private bool bonusScoreAdded = false; // Add this line
+    private bool bonusScoreAdded = false;
 
     private float checkerTimer = 0f;
     private float checkerTime = 0.5f;
 
     PlataformaController plataformaController;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,7 +27,7 @@ public class BallController : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) // Check for touch input
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             if (Time.time - lastTapTime < doubleTapDelay)
             {
@@ -54,13 +51,12 @@ public class BallController : MonoBehaviour
         }
     }
 
-    //Al derectar choques
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Plataforma"))
         {
             rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
-            bounceForce = originalBounceForce; // Reset bounce force after collision
+            bounceForce = originalBounceForce; // Restaura la fuerza
         }
 
         if (collision.gameObject.CompareTag("Trampa"))
@@ -69,7 +65,6 @@ public class BallController : MonoBehaviour
         }
     }
 
-    //Al detectar que esta dentro
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Meta") && !bonusScoreAdded)
@@ -79,12 +74,25 @@ public class BallController : MonoBehaviour
                 Debug.Log("Nivel Completado");
                 CylinderController.instance.endPanel.gameObject.SetActive(true);
 
-                // Stop the timer immediately
                 PlataformaController.instance.timerRunning = false;
 
-                // Handle level completion
-                string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+                string currentScene = SceneManager.GetActiveScene().name;
                 Score.Instance.HandleLevelCompletion(currentScene, PlataformaController.instance.countdownTime);
+
+                // Desbloquea el siguiente nivel
+                LevelSelector levelSelector = FindObjectOfType<LevelSelector>();
+                if (levelSelector != null)
+                {
+                    int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+                    
+                        levelSelector.availableLevels[currentLevelIndex - 3] = true;
+                        Debug.Log($"Nivel {currentLevelIndex - 3} desbloqueado.");
+                    
+                }
+                else
+                {
+                    Debug.LogWarning("No se encontró un LevelSelector.");
+                }
 
                 bonusScoreAdded = true;
 
@@ -95,18 +103,16 @@ public class BallController : MonoBehaviour
 
     private IEnumerator LoadNextScene()
     {
-        yield return new WaitForSeconds(2f); 
+        yield return new WaitForSeconds(2f);
 
-        // Cargar la siguiente escena
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) // Verifica que exista un siguiente nivel
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-            SceneManager.LoadScene(nextSceneIndex);
+            SceneManager.LoadScene(2);
         }
         else
         {
             Debug.Log("No hay más niveles. El juego ha terminado.");
-            // Aquí puedes manejar el final del juego, como cargar una escena de "Fin del juego".
         }
     }
 }
