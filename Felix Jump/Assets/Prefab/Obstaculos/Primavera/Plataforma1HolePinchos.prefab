@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 5047105649587176705, guid: f5a9a121f134d2b499820159d6328e47,
         type: 3}
       propertyPath: m_Name
-      value: Plataforma1HolePinchos Variant
+      value: Plataforma1HolePinchos
       objectReference: {fileID: 0}
     - target: {fileID: 7070295454639831500, guid: f5a9a121f134d2b499820159d6328e47,
         type: 3}
