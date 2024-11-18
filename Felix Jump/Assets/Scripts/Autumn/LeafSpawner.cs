@@ -40,7 +40,7 @@ public class LeafSpawner : MonoBehaviour
         // Generate random initial position for the leaf
         Vector3 spawnPosition = new Vector3(
             Random.Range(-spawnArea.x, spawnArea.x),
-            spawnArea.y,
+            transform.position.y,
             //Random.Range(5, spawnArea.y),
             spawnArea.z
         );
