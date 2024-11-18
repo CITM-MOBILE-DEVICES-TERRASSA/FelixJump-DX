@@ -110,23 +110,28 @@ public class PlataformaController : MonoBehaviour
                 if (aparecerSnowBalls) cantidadObstaculos++;
                 if (aparecerScythes) cantidadObstaculos++;
 
-                proabSpawnObstacle = Random.Range(1, cantidadObstaculos+1);
-                switch (proabSpawnObstacle)
+                if(cantidadObstaculos > 0)
                 {
-                    case 1:
-                        if(i != 0 && i != 1)
-                        {
-                            Instantiate(netGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)) - (distanciaSpawn / 2)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
-                        }
-                        break;
-                    case 2:
-                        Instantiate(snowBallGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)-1) + (1)),0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);                        //Instantiate(snowBallGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)) - (distanciaSpawn / 2)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
-                        break;
-                    case 3:
-                        Instantiate(scytheGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1) - 0.4f)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
-                        Debug.Log("Spawn scythe");
-                        break;
+                    proabSpawnObstacle = Random.Range(1, cantidadObstaculos + 1);
+
+                    switch (proabSpawnObstacle)
+                    {
+                        case 1:
+                            if (i != 0 && i != 1)
+                            {
+                                Instantiate(netGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)) - (distanciaSpawn / 2)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+                            }
+                            break;
+                        case 2:
+                            Instantiate(snowBallGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1) - 1) + (1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);                        //Instantiate(snowBallGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)) - (distanciaSpawn / 2)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+                            break;
+                        case 3:
+                            Instantiate(scytheGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1) - 0.4f)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+                            Debug.Log("Spawn scythe");
+                            break;
+                    }
                 }
+                
             }
         }
 

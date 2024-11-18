@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hojas
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f9ea2fa19d39e141ba289e9cda2a740,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trampa
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94,7 +99,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1f9ea2fa19d39e141ba289e9cda2a740,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2563977143118526402}
+      addedObject: {fileID: 2922036971834759134}
   m_SourcePrefab: {fileID: 100100000, guid: 1f9ea2fa19d39e141ba289e9cda2a740, type: 3}
 --- !u!1 &6136598123077896619 stripped
 GameObject:
@@ -120,15 +125,13 @@ MonoBehaviour:
   maxSwaySpeed: 1
   minSwayAmount: 0.41
   maxSwayAmount: 0.41
---- !u!58 &-2563977143118526402
-CircleCollider2D:
+--- !u!135 &2922036971834759134
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6136598123077896619}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -137,21 +140,9 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00023517013, y: -0.0032129958}
-  serializedVersion: 2
-  m_Radius: 0.052033838
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.03
+  m_Center: {x: -0.00023517013, y: -0.0032129958, z: 0.004672955}
