@@ -25,7 +25,7 @@ public class LevelSelector : MonoBehaviour
         }
     }
 
-    [SerializeField] private Button[] levelButtons = new Button[5];
+    [SerializeField] public Button[] levelButtons = new Button[5];
     [SerializeField] public bool[] availableLevels = new bool[5];
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject levelsPanel;
@@ -60,10 +60,7 @@ public class LevelSelector : MonoBehaviour
                 }
             }
 
-            for (int i = 0; i < levelButtons.Length; i++)
-            {
-                levelButtons[i].interactable = availableLevels[i];
-            }
+            
         }
     }
 
@@ -76,10 +73,28 @@ public class LevelSelector : MonoBehaviour
 
     public void ChangeToLevelSelector()
     {
+        
+        {
+            levelButtons[0] = GameObject.Find("Spring").GetComponent<Button>();
+            levelButtons[1] = GameObject.Find("Summer").GetComponent<Button>();
+            levelButtons[2] = GameObject.Find("Autumn").GetComponent<Button>();
+            levelButtons[3] = GameObject.Find("Winter").GetComponent<Button>();
+            levelButtons[4] = GameObject.Find("Halloween").GetComponent<Button>();
+        }
         if (gamePanel == null || levelsPanel == null)
         {
             gamePanel = GameObject.Find("PlayGame");
             levelsPanel = GameObject.Find("Canvas");
+            levelButtons[0].onClick.AddListener(() => SelectLevel("SpringLevel"));
+            levelButtons[1].onClick.AddListener(() => SelectLevel("SummerLevel"));
+            levelButtons[2].onClick.AddListener(() => SelectLevel("AutumnLevel"));
+            levelButtons[3].onClick.AddListener(() => SelectLevel("WinterLevel"));
+            levelButtons[4].onClick.AddListener(() => SelectLevel("HalloweenLevel"));
+
+        }
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            levelButtons[i].interactable = availableLevels[i];
         }
         gamePanel.SetActive(false);
         levelsPanel.SetActive(true);

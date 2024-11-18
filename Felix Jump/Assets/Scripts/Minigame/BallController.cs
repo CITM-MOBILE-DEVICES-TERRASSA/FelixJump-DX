@@ -97,23 +97,23 @@ public class BallController : MonoBehaviour
 
                 bonusScoreAdded = true;
 
-                StartCoroutine(LoadNextScene());
+                //StartCoroutine(LoadNextScene());
             }
         }
     }
 
-    private IEnumerator LoadNextScene()
-    {
-        yield return new WaitForSeconds(2f);
+    //private IEnumerator LoadNextScene()
+    //{
+    //    yield return new WaitForSeconds(2f);
 
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(2);
-        }
-        else
-        {
-            Debug.Log("No hay más niveles. El juego ha terminado.");
-        }
-    }
+    //    int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+    //    if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+    //    {
+    //        SceneManager.LoadScene(2);
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("No hay más niveles. El juego ha terminado.");
+    //    }
+    //}
 }
