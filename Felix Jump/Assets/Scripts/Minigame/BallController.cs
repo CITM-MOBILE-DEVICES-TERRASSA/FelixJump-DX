@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallController : MonoBehaviour
@@ -87,7 +88,26 @@ public class BallController : MonoBehaviour
                 Score.Instance.HandleLevelCompletion(currentScene, PlataformaController.instance.countdownTime);
 
                 bonusScoreAdded = true;
+
+                StartCoroutine(LoadNextScene());
             }
+        }
+    }
+
+    private IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(2f); 
+
+        // Cargar la siguiente escena
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) // Verifica que exista un siguiente nivel
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("No hay más niveles. El juego ha terminado.");
+            // Aquí puedes manejar el final del juego, como cargar una escena de "Fin del juego".
         }
     }
 }
