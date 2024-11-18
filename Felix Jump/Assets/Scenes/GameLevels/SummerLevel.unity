@@ -2485,9 +2485,19 @@ PrefabInstance:
       objectReference: {fileID: 1050134490}
     - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
         type: 3}
+      propertyPath: aparecerNets
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
+        type: 3}
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 2076404164}
+    - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
+        type: 3}
+      propertyPath: aparecerLeafes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7817368277182264252, guid: a1db565d44335ff428c7ace2acc0a5d2,
         type: 3}
       propertyPath: m_Name

@@ -110,7 +110,7 @@ public class PlataformaController : MonoBehaviour
                 if (aparecerSnowBalls) cantidadObstaculos++;
                 if (aparecerScythes) cantidadObstaculos++;
 
-                proabSpawnObstacle = Random.Range(1, cantidadObstaculos);
+                proabSpawnObstacle = Random.Range(1, cantidadObstaculos+1);
                 switch (proabSpawnObstacle)
                 {
                     case 1:
@@ -121,10 +121,9 @@ public class PlataformaController : MonoBehaviour
                         break;
                     case 2:
                         Instantiate(snowBallGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)-1) + (1)),0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);                        //Instantiate(snowBallGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1)) - (distanciaSpawn / 2)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
-                        Debug.Log("Spawn snow");
                         break;
                     case 3:
-                        Instantiate(scytheGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1) - 1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+                        Instantiate(scytheGameObject, new Vector3(0, (startingY + (distanciaSpawn * (i + 1) - 0.4f)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
                         Debug.Log("Spawn scythe");
                         break;
                 }
