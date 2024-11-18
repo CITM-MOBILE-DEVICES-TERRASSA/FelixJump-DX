@@ -1616,7 +1616,7 @@ GameObject:
   - component: {fileID: 1005313001}
   m_Layer: 0
   m_Name: MainCylindre
-  m_TagString: Untagged
+  m_TagString: MainCylindre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2751,9 +2751,24 @@ MonoBehaviour:
     type: 3}
   ballPrefab: {fileID: 353864344936485748, guid: 4837c6fad35dac84e8e642b9b0f59ae5,
     type: 3}
+  plataformaPinchos1Hole: {fileID: 0}
+  plataformaPinchos2Hole: {fileID: 0}
+  plataformaPinchos1HoleVariant: {fileID: 0}
+  plataformaPinchos2HoleVariant: {fileID: 0}
   numeroPlataforma: 5
   distanciaSpawn: 0.8
   startingY: 0
+  leafSpawner: {fileID: 0}
+  netGameObject: {fileID: 0}
+  snowBallGameObject: {fileID: 0}
+  scytheGameObject: {fileID: 0}
+  aparecerLeafes: 0
+  aparecerNets: 0
+  aparecerSnowBalls: 0
+  aparecerScythes: 0
+  countdownTime: 90
+  timerRunning: 1
+  countdownText: {fileID: 0}
 --- !u!1 &1449678451
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6636970134752237955}
   m_Layer: 0
   m_Name: Plataforma2HolesPinchos
-  m_TagString: Plataforma
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 3755782450341233815}
   - component: {fileID: 265962688980667186}
   - component: {fileID: 2617740244205944824}
+  - component: {fileID: 5272185748528878620}
   m_Layer: 0
   m_Name: Plataforma_Pinchos
-  m_TagString: Untagged
+  m_TagString: Trampa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +117,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5272185748528878620
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4563528035332791853}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4343838675172041327, guid: b08f0a858b3d67a4ca6eca04485046fa, type: 3}
 --- !u!1 &8351149695565465279
 GameObject:
   m_ObjectHideFlags: 0
