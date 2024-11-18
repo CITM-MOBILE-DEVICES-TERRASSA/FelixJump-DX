@@ -16,6 +16,7 @@ public class CylinderController : MonoBehaviour
 
     [Header("Paneles")]
     public RectTransform endPanel;
+    public RectTransform lostPanel; 
 
     private void Awake()
     {

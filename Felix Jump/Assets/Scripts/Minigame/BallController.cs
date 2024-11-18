@@ -65,6 +65,7 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.CompareTag("Trampa"))
         {
             transform.position = new Vector3(0, 0.4f, -0.7f);
+            Debug.Log("Lost");
         }
     }
 

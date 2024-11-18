@@ -544,6 +544,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1788701363698423730, guid: 66d643eb812378640ae078da8a1e1482,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5252a02b723e7284590bc376dc6aed2a, type: 2}
     - target: {fileID: 2246194415679896294, guid: 66d643eb812378640ae078da8a1e1482,
         type: 3}
       propertyPath: m_Constraints
@@ -599,20 +604,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4728139873375446240, guid: 66d643eb812378640ae078da8a1e1482,
-        type: 3}
-      propertyPath: rotationSpeed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237217839778883617, guid: 66d643eb812378640ae078da8a1e1482,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.224
-      objectReference: {fileID: 0}
     - target: {fileID: 8489623476893639464, guid: 66d643eb812378640ae078da8a1e1482,
         type: 3}
       propertyPath: m_Name
       value: SnowBallRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489623476893639464, guid: 66d643eb812378640ae078da8a1e1482,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

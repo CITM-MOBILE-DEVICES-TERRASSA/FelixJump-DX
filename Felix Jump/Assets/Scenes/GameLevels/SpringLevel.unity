@@ -1013,14 +1013,40 @@ PrefabInstance:
       objectReference: {fileID: 1050134490}
     - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
         type: 3}
+      propertyPath: aparecerNets
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
+        type: 3}
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 975212338}
     - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
         type: 3}
+      propertyPath: aparecerLeafes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
+        type: 3}
+      propertyPath: aparecerScythes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
+        type: 3}
       propertyPath: numeroPlataforma
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
+        type: 3}
+      propertyPath: aparecerSnowBalls
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
+        type: 3}
+      propertyPath: snowBallGameObject
+      value: 
+      objectReference: {fileID: 8489623476893639464, guid: 66d643eb812378640ae078da8a1e1482,
+        type: 3}
     - target: {fileID: 7817368277182264252, guid: a1db565d44335ff428c7ace2acc0a5d2,
         type: 3}
       propertyPath: m_Name

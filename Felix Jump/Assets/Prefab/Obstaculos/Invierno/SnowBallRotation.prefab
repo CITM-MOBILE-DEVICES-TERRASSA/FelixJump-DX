@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5252a02b723e7284590bc376dc6aed2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,6 +124,8 @@ MonoBehaviour:
   ball: {fileID: 353864344936485748, guid: 4837c6fad35dac84e8e642b9b0f59ae5, type: 3}
   thresholdDistance: 0.66
   rotationSpeed: 50
+  isGrounded: 0
+  isNear: 0
 --- !u!54 &2246194415679896294
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,7 +151,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 90
   m_CollisionDetection: 0
 --- !u!1 &8489623476893639464
 GameObject:
