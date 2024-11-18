@@ -17,6 +17,9 @@ public class BallController : MonoBehaviour
 
     private bool bonusScoreAdded = false; // Add this line
 
+    private float checkerTimer = 0f;
+    private float checkerTime = 0.5f;
+
     PlataformaController plataformaController;
     void Start()
     {
@@ -33,6 +36,20 @@ public class BallController : MonoBehaviour
                 bounceForce = originalBounceForce * 2;
             }
             lastTapTime = Time.time;
+        }
+
+        if (rb.velocity.magnitude < 0.01f)
+        {
+            checkerTimer += Time.deltaTime;
+            if (checkerTimer >= checkerTime)
+            {
+                rb.AddForce(Vector3.up * originalBounceForce, ForceMode.Impulse);
+                checkerTimer = 0f;
+            }
+        }
+        else
+        {
+            checkerTimer = 0f;
         }
     }
 

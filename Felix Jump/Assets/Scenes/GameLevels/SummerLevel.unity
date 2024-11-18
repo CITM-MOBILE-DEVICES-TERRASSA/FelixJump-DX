@@ -2485,9 +2485,19 @@ PrefabInstance:
       objectReference: {fileID: 1050134490}
     - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
         type: 3}
+      propertyPath: aparecerNets
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
+        type: 3}
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 2076404164}
+    - target: {fileID: 3608338764134728550, guid: a1db565d44335ff428c7ace2acc0a5d2,
+        type: 3}
+      propertyPath: aparecerLeafes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7817368277182264252, guid: a1db565d44335ff428c7ace2acc0a5d2,
         type: 3}
       propertyPath: m_Name
@@ -3393,7 +3403,7 @@ GameObject:
   - component: {fileID: 1847750459}
   m_Layer: 0
   m_Name: MainCylindre
-  m_TagString: Untagged
+  m_TagString: MainCylindre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
