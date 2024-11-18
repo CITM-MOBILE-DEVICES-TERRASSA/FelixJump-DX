@@ -24,6 +24,13 @@ public class Score : MonoBehaviour
 
     [SerializeField] private float scoreTimer = 0f;
     [SerializeField] private bool addScore = true;
+
+    [SerializeField] private TextMeshProUGUI autumnMaxScoreText;
+    [SerializeField] private TextMeshProUGUI halloweenMaxScoreText;
+    [SerializeField] private TextMeshProUGUI springMaxScoreText;
+    [SerializeField] private TextMeshProUGUI winterMaxScoreText;
+    [SerializeField] private TextMeshProUGUI summerMaxScoreText;
+
     private void Awake()
     {
         if (instance == null)
@@ -42,6 +49,8 @@ public class Score : MonoBehaviour
         maxWinterScore = PlayerPrefs.GetInt("MaxWinterScore", 0);
         maxSummerScore = PlayerPrefs.GetInt("MaxSummerScore", 0);
         maxTotalScore = PlayerPrefs.GetInt("MaxTotalScore", 0);
+
+        UpdateMaxScoreTexts();
     }
 
     private void Update()
@@ -116,10 +125,37 @@ public class Score : MonoBehaviour
         if (maxScoreUpdated)
         {
             UpdateMaxTotalScore();
+            UpdateMaxScoreTexts();
         }
 
         PlayerPrefs.Save();
     }
+
+
+    private void UpdateMaxScoreTexts()
+    {
+        if (autumnMaxScoreText != null)
+        {
+            autumnMaxScoreText.text = "Max Score: " + maxAutumnScore;
+        }
+        if (halloweenMaxScoreText != null)
+        {
+            halloweenMaxScoreText.text = "Max Score: " + maxHalloweenScore;
+        }
+        if (springMaxScoreText != null)
+        {
+            springMaxScoreText.text = "Max Score: " + maxSpringScore;
+        }
+        if (winterMaxScoreText != null)
+        {
+            winterMaxScoreText.text = "Max Score: " + maxWinterScore;
+        }
+        if (summerMaxScoreText != null)
+        {
+            summerMaxScoreText.text = "Max Score: " + maxSummerScore;
+        }
+    }
+    
 
     public void UpdateScoreWithBonus(string levelName, int bonusScore)
     {
@@ -177,6 +213,7 @@ public class Score : MonoBehaviour
         if (maxScoreUpdated)
         {
             UpdateMaxTotalScore();
+            UpdateMaxScoreTexts();
         }
 
         PlayerPrefs.Save();
