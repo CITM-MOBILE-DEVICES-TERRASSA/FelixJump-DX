@@ -40,6 +40,9 @@ public class PlataformaController : MonoBehaviour
     private HashSet<int> visitedPlatforms;
     private GameObject ball;
 
+    [Header("Colores de las plataformas")]
+    public List<Color> platformColors;
+
     [Header("Timer")]
     public float countdownTime = 90f;
     public bool timerRunning = true;
@@ -100,7 +103,12 @@ public class PlataformaController : MonoBehaviour
             }
             lastOrientationY = rotationY;
 
-            Instantiate(plataformaToSpawn, new Vector3(0, startingY + (distanciaSpawn * (i + 1)), 0), Quaternion.Euler(0, rotationY, 0), CylinderController.instance.cylinder.transform);
+            GameObject newPlatform = Instantiate(plataformaToSpawn,
+                new Vector3(0, startingY + (distanciaSpawn * (i + 1)), 0),
+                Quaternion.Euler(0, rotationY, 0),
+                CylinderController.instance.cylinder.transform);
+
+            AssignRandomColor(newPlatform);
 
             float proabSpawnObstacle = Random.Range(0, 100);
             if(proabSpawnObstacle < 50)
@@ -169,10 +177,29 @@ public class PlataformaController : MonoBehaviour
         // Update the countdown text
         countdownText.text = Mathf.Ceil(countdownTime).ToString();
 
-
-
         CheckBallPosition();
         //CheckBallReachedGoal();
+    }
+
+    private void AssignRandomColor(GameObject platform)
+    {
+        if (platformColors != null && platformColors.Count > 0)
+        {
+            Color randomColor = platformColors[Random.Range(0, platformColors.Count)];
+            Renderer[] renderers = platform.GetComponentsInChildren<Renderer>();
+
+            foreach (Renderer renderer in renderers)
+            {
+                if (renderer.gameObject.CompareTag("Plataforma"))
+                {
+                    Material newMaterial = new Material(renderer.material);
+                    newMaterial.SetColor("_BaseColor", randomColor);
+                    renderer.material = newMaterial;
+
+                    Debug.Log($"Color asignado a {renderer.gameObject.name} con etiqueta Plataforma: {randomColor}");
+                }
+            }
+        }
     }
 
     void CheckBallPosition()
