@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e11f5b66aad75483b8cd16ee18a0c917, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -478,8 +478,8 @@ Camera:
   m_GameObject: {fileID: 275035447}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.45492443, g: 0.6320754, b: 0.45020467, a: 1}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -771,7 +771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 243.03, y: -121}
+  m_AnchoredPosition: {x: 243, y: -121}
   m_SizeDelta: {x: 486.0508, y: 164.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356836642
@@ -1873,7 +1873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -141.80005}
+  m_AnchoredPosition: {x: 0, y: -142}
   m_SizeDelta: {x: 0, y: 283.6001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &960480329
@@ -2570,7 +2570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 124.00012}
+  m_AnchoredPosition: {x: 0, y: 124}
   m_SizeDelta: {x: 960, y: 80.9126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050134490
@@ -3054,7 +3054,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 143.2998}
+  m_AnchoredPosition: {x: 0, y: 143}
   m_SizeDelta: {x: 0, y: 286.6001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1392885439
@@ -3506,7 +3506,7 @@ PrefabInstance:
     - target: {fileID: 7456012291393544638, guid: f7383612cc9314319a8ed4d6119e8017,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -141.79993
+      value: -142
       objectReference: {fileID: 0}
     - target: {fileID: 7456012291393544638, guid: f7383612cc9314319a8ed4d6119e8017,
         type: 3}
@@ -4575,7 +4575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 243.03, y: -209.95013}
+  m_AnchoredPosition: {x: 243, y: -210}
   m_SizeDelta: {x: 436, y: 147.30005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
