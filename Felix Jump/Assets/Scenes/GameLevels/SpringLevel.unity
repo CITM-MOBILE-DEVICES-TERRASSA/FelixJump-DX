@@ -1333,6 +1333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sakura
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1b835bf71ce4a804a891c887f2e2205f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plataforma
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: 1b835bf71ce4a804a891c887f2e2205f, type: 3}
