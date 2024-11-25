@@ -9,6 +9,11 @@ public class GameHUD : MonoBehaviour
 
     private void Start()
     {
+        if (scoreText == null || highScoreText == null)
+        {
+            Debug.LogError("ScoreText or HighScoreText is not assigned!");
+        }
+
         UpdateScoreTexts();
     }
 
@@ -26,6 +31,12 @@ public class GameHUD : MonoBehaviour
 
     public void ChangeToMenu()
     {
+        if (ScenesManager.Instance == null)
+        {
+            Debug.LogError("ScenesManager.Instance is null! Ensure ScenesManager exists in the scene.");
+            return;
+        }
+
         ScenesManager.Instance.LoadScene("GameSelector");
         // Score.Instance.SetAddScore(false);
     }
