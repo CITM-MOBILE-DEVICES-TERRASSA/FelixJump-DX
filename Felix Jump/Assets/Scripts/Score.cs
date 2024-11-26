@@ -42,6 +42,16 @@ public class Score : MonoBehaviour
         maxTotalScore = PlayerPrefs.GetInt("MaxTotalScore", 0);
 
         UpdateMaxScoreTexts();
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Opcional: si deseas mantener este objeto entre escenas
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
