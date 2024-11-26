@@ -21,7 +21,12 @@ PrefabInstance:
     - target: {fileID: 5047105649587176705, guid: f5a9a121f134d2b499820159d6328e47,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Plataforma
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466826088161156699, guid: f5a9a121f134d2b499820159d6328e47,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plataforma
       objectReference: {fileID: 0}
     - target: {fileID: 7070295454639831500, guid: f5a9a121f134d2b499820159d6328e47,
         type: 3}
@@ -74,7 +79,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3853919102337231999, guid: f5a9a121f134d2b499820159d6328e47, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7070295454639831500, guid: f5a9a121f134d2b499820159d6328e47,
         type: 3}
