@@ -19,6 +19,11 @@ public class BallController : MonoBehaviour
 
     PlataformaController plataformaController;
 
+    // Variables para sonidos
+    public AudioSource jump1;
+    public AudioSource jump2;
+    public AudioSource jump3;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,6 +47,7 @@ public class BallController : MonoBehaviour
             if (checkerTimer >= checkerTime)
             {
                 rb.AddForce(Vector3.up * originalBounceForce, ForceMode.Impulse);
+                PlayRandomJumpSound();
                 checkerTimer = 0f;
             }
         }
@@ -56,6 +62,7 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.CompareTag("Plataforma"))
         {
             rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
+            PlayRandomJumpSound();
             bounceForce = originalBounceForce; // Restaura la fuerza
         }
 
@@ -85,10 +92,10 @@ public class BallController : MonoBehaviour
                 if (levelSelector != null)
                 {
                     int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-                    
-                        levelSelector.availableLevels[currentLevelIndex - 3] = true;
-                        Debug.Log($"Nivel {currentLevelIndex - 3} desbloqueado.");
-                    
+
+                    levelSelector.availableLevels[currentLevelIndex - 3] = true;
+                    Debug.Log($"Nivel {currentLevelIndex - 3} desbloqueado.");
+
                 }
                 else
                 {
@@ -96,24 +103,25 @@ public class BallController : MonoBehaviour
                 }
 
                 bonusScoreAdded = true;
-
-                //StartCoroutine(LoadNextScene());
             }
         }
     }
 
-    //private IEnumerator LoadNextScene()
-    //{
-    //    yield return new WaitForSeconds(2f);
-
-    //    int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-    //    if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-    //    {
-    //        SceneManager.LoadScene(2);
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("No hay más niveles. El juego ha terminado.");
-    //    }
-    //}
+    // Método para reproducir un sonido aleatorio
+    private void PlayRandomJumpSound()
+    {
+        int randomIndex = Random.Range(0, 3);
+        switch (randomIndex)
+        {
+            case 0:
+                jump1.Play();
+                break;
+            case 1:
+                jump2.Play();
+                break;
+            case 2:
+                jump3.Play();
+                break;
+        }
+    }
 }

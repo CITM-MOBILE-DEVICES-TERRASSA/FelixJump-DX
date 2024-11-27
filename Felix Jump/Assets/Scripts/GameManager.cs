@@ -33,6 +33,12 @@ public class GameManager : MonoBehaviour
     
     public void PauseGame()
     {
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager.Instance is null! Ensure GameManager exists in the scene.");
+            return;
+        }
+
         Time.timeScale = 0;
     }
 

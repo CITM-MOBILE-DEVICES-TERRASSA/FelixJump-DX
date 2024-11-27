@@ -33,15 +33,6 @@ public class Score : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
 
         maxAutumnScore = PlayerPrefs.GetInt("MaxAutumnScore", 0);
         maxHalloweenScore = PlayerPrefs.GetInt("MaxHalloweenScore", 0);
@@ -51,6 +42,16 @@ public class Score : MonoBehaviour
         maxTotalScore = PlayerPrefs.GetInt("MaxTotalScore", 0);
 
         UpdateMaxScoreTexts();
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Opcional: si deseas mantener este objeto entre escenas
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
