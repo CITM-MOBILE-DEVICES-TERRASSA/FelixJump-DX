@@ -237,6 +237,7 @@ public class Score : MonoBehaviour
     {
         maxTotalScore = maxAutumnScore + maxHalloweenScore + maxSpringScore + maxWinterScore + maxSummerScore;
         PlayerPrefs.SetInt("MaxTotalScore", maxTotalScore);
+        GeneralScore.Instance.UpdateOtherGameScore(maxTotalScore);
     }
 
     public int GetScore(string levelName)

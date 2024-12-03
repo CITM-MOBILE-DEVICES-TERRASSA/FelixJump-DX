@@ -1252,7 +1252,7 @@ GameObject:
   - component: {fileID: 1041912321}
   - component: {fileID: 1041912320}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 126.017
+  m_text: ------
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c09091d08af478345a3b365d4c5c35e6, type: 2}
   m_sharedMaterial: {fileID: -2076542180396658993, guid: c09091d08af478345a3b365d4c5c35e6,
@@ -2272,7 +2272,7 @@ GameObject:
   - component: {fileID: 1390378853}
   - component: {fileID: 1390378852}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SCORE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

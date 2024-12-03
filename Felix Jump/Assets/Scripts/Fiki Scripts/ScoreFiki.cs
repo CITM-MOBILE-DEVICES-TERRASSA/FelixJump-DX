@@ -42,5 +42,9 @@ public class ScoreFiki : MonoBehaviour
         Manager.instance.score++;
         currentScoreText.text = Manager.instance.score.ToString();
         UpdateHighScore();
+
+        // Actualizar el puntaje global
+        GeneralScore.Instance.UpdateFikiScore(Manager.instance.maxscore);
     }
+
 }
