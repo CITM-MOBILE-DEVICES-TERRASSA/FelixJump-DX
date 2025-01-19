@@ -1,10 +1,8 @@
 {
-    "name": "GameplayColorsMagic",
+    "name": "FJDXCommonScripts",
     "rootNamespace": "",
     "references": [
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:92d7a4d9eeae35e4eb2b03aea79235dd",
-        "GUID:1adf852665921894fb7520b0942612da"
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
