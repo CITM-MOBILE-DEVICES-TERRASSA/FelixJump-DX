@@ -89,10 +89,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719099620896930432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916c23d8f0353ab418a82cb951e8b998, type: 3}
+  m_Script: {fileID: 11500000, guid: 72f5aead44bc1aa4595ce53afdced388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeleft: 30
+  timeleft: 15
   timeText: {fileID: 5741944165815218254}
   skipButton: {fileID: 0}
   entities: []
