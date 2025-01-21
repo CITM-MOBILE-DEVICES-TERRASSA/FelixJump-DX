@@ -1,18 +1,21 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerBounce : MonoBehaviour
 {
+    public PlayerInput playerInput;
+    public InputAction moveAction;
     public float minBounceForce = 1f;
     public float maxBounceForce = 20f;
     public float bounceForce = 10f;
     private Rigidbody rb;
-    InputAction moveAction;
 
     private void Start()
     {
+        playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
-        moveAction = InputSystem.actions.FindAction("Move");
+        moveAction = playerInput.actions.FindAction("Move");
 
         if (rb == null)
         {
@@ -20,14 +23,26 @@ public class PlayerBounce : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        var vec = moveAction.ReadValue<Vector2>();
+        if (vec.y > Single.Epsilon)
+            Debug.Log(vec.ToString());
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.contacts.Length > 0)
+        if (collision.GetContact(0).point.y < transform.position.y)
         {
-            bounceForce = Mathf.Lerp(minBounceForce,maxBounceForce, moveAction.ReadValue<float>());
 
-            rb.velocity = Vector3.zero; 
+            rb.velocity = Vector3.zero;
             rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
         }
+    }
+
+    void OnMove(InputValue value)
+    {
+        bounceForce = Mathf.Lerp(minBounceForce, maxBounceForce, (value.Get<Vector2>().y+1)/2);
+
     }
 }

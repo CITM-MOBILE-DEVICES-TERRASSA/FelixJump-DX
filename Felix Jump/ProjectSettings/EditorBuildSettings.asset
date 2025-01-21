@@ -68,4 +68,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FelixJumpDX/Level Selector.unity
     guid: 52a1a5c0636606441bac59837aaab81e
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 81f8080e672b2ba40af660099d3360b4,
+      type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 82b2ad371dfa5c94894451c7e97449c1,
+      type: 3}
