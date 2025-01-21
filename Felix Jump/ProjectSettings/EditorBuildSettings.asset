@@ -62,4 +62,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Colors Magic Scenes/Defeat.unity
     guid: 129af4b2486618d4e850cad8efea99c4
+  - enabled: 1
+    path: Assets/Scenes/FelixJumpDX/Niveles/Level 1.unity
+    guid: a255bf35df0116e43aac7816ecf70988
+  - enabled: 1
+    path: Assets/Scenes/FelixJumpDX/Level Selector.unity
+    guid: 52a1a5c0636606441bac59837aaab81e
   m_configObjects: {}
