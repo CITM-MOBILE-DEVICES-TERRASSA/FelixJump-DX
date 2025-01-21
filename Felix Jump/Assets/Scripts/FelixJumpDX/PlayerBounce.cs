@@ -1,13 +1,18 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBounce : MonoBehaviour
 {
-    public float bounceForce = 10f; 
+    public float minBounceForce = 1f;
+    public float maxBounceForce = 20f;
+    public float bounceForce = 10f;
     private Rigidbody rb;
+    InputAction moveAction;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        moveAction = InputSystem.actions.FindAction("Move");
 
         if (rb == null)
         {
@@ -19,10 +24,10 @@ public class PlayerBounce : MonoBehaviour
     {
         if (collision.contacts.Length > 0)
         {
-            Vector3 surfaceNormal = collision.contacts[0].normal;
+            bounceForce = Mathf.Lerp(minBounceForce,maxBounceForce, moveAction.ReadValue<float>());
 
             rb.velocity = Vector3.zero; 
-            rb.AddForce(surfaceNormal * bounceForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
         }
     }
 }
