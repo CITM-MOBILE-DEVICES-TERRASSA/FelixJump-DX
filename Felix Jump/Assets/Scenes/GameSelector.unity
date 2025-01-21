@@ -994,7 +994,7 @@ MonoBehaviour:
   - {fileID: 1275524387}
   - {fileID: 1489864408}
   - {fileID: 1916165297}
-  availableGames: 0101010000
+  availableGames: 0101010100
   highScoreText: {fileID: 337038520}
 --- !u!4 &722140153
 Transform:
