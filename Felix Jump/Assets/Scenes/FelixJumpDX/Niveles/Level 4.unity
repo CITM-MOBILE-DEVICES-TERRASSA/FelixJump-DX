@@ -1169,8 +1169,8 @@ Transform:
   m_GameObject: {fileID: 1003863699}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 33, z: 12}
-  m_LocalScale: {x: 1728.2504, y: 1757.3392, z: 11.314865}
+  m_LocalPosition: {x: -540, y: -680.27344, z: 11.594531}
+  m_LocalScale: {x: 26.387974, y: 109.20404, z: 0.703125}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4141035404250425000}
@@ -2256,16 +2256,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6686803313142904758, guid: c7e68412cb615114094a7aecaa34a93a,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1466546694}
-    - target: {fileID: 6686803313142904758, guid: c7e68412cb615114094a7aecaa34a93a,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
