@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 93575724}
   - component: {fileID: 93575723}
+  - component: {fileID: 93575725}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -216,6 +217,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &93575725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93575722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &237556829
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +298,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 0bc09a97c99dfde4f8e42894b2687261, type: 3}
+    m_Font: {fileID: 12800000, guid: 48429c6097dcd02448f9022b36e18308, type: 3}
     m_FontSize: 196
     m_FontStyle: 1
     m_BestFit: 0
@@ -642,7 +666,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1509211453}
-        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: ButtonManager, GameplayColorsMagic
         m_MethodName: mainMenu
         m_Mode: 1
         m_Arguments:
@@ -718,7 +742,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1509211452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e181df274332c654b815c40826e40239, type: 3}
+  m_Script: {fileID: 11500000, guid: 8911a9e19191e674ebacd8096543f065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
@@ -749,7 +773,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 49bcdfe68b1be9a4a9c84327f0b191d2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7418edfebf5057645a982739eeac5126, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

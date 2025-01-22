@@ -81,7 +81,7 @@ public class Temporizador : MonoBehaviour
         butonManager.defense = false;
     }
 
-    private void SkipTimer() 
+    public void SkipTimer() 
     {
         skipButtonFx.Play();
         remainingTime = 0;
