@@ -4,8 +4,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerBounce : MonoBehaviour
 {
-    public PlayerInput playerInput;
-    public InputAction moveAction;
     public float minBounceForce = 1f;
     public float maxBounceForce = 20f;
     public float bounceForce = 10f;
@@ -13,21 +11,12 @@ public class PlayerBounce : MonoBehaviour
 
     private void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
-        moveAction = playerInput.actions.FindAction("Move");
 
         if (rb == null)
         {
             Debug.LogError("No se encontró un Rigidbody en el objeto jugador.");
         }
-    }
-
-    private void Update()
-    {
-        var vec = moveAction.ReadValue<Vector2>();
-        if (vec.y > Single.Epsilon)
-            Debug.Log(vec.ToString());
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,9 +29,9 @@ public class PlayerBounce : MonoBehaviour
         }
     }
 
-    void OnMove(InputValue value)
+    // Using a value between 0 and 1 sets the bounce force to use on the next bounce
+    public void SetBounceForce(float rangeValue)
     {
-        bounceForce = Mathf.Lerp(minBounceForce, maxBounceForce, (value.Get<Vector2>().y+1)/2);
-
+        bounceForce = Mathf.Lerp(minBounceForce, maxBounceForce, rangeValue);
     }
 }

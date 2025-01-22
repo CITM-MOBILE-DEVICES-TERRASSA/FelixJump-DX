@@ -46,9 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858bdb15954a5bc4ebddfe473eefc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSlider: {fileID: 0}
-  minRotation: 180
-  maxRotation: -180
+  maxRotationSpeed: 0.5
+  rotationSpeed: 0
 --- !u!1 &2806425946227460199
 GameObject:
   m_ObjectHideFlags: 0

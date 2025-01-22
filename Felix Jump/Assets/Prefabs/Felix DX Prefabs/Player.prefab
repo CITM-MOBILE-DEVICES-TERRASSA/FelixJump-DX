@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3338625384276289746}
   - component: {fileID: 8148694371095617500}
   - component: {fileID: 6576337029252645229}
-  - component: {fileID: 6823740434224982673}
   - component: {fileID: 4126397798634000356}
+  - component: {fileID: 5801171074979619847}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -135,37 +135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &6823740434224982673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8573608950933459182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 82b2ad371dfa5c94894451c7e97449c1,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Touch
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &4126397798634000356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,16 +147,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 878f9f4507f7f4347b63b7ebc649cc84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 6823740434224982673}
-  moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 92386098-cc48-48e5-bf71-c2f134557dd0
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   minBounceForce: 2
   maxBounceForce: 10
   bounceForce: 5
+--- !u!114 &5801171074979619847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573608950933459182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed640587c34fe624ea47f30b0c2162cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

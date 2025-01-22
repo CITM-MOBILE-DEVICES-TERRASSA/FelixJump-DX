@@ -8,7 +8,7 @@ public class BallCollisionDetector : MonoBehaviour
         {
             Transform platformTransform = collision.gameObject.transform;
 
-            CameraFollower cameraFollower = Camera.main.GetComponent<CameraFollower>();
+            CameraFollower cameraFollower = Camera.main?.GetComponent<CameraFollower>();
             if (cameraFollower != null)
             {
                 cameraFollower.SetTarget(platformTransform);
