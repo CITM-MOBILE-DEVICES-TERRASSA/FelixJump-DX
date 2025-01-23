@@ -23,7 +23,7 @@ public class PlayerBounce : MonoBehaviour
     {
         if (collision.GetContact(0).point.y < transform.position.y)
         {
-            FindObjectOfType<FJDXScore>().OnLandOnPlatform(collision.gameObject);
+            FindObjectOfType<FJDXScore>()?.OnLandOnPlatform(collision.gameObject);
             if (FJDXScore.GoalReached)
             {
                 bounceForce = maxBounceForce * 3;
