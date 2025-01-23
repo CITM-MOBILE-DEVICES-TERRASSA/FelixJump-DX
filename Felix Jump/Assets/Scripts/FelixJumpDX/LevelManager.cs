@@ -50,6 +50,6 @@ public class LevelSelectionMenu : MonoBehaviour
 
     public void LoadInfiniteTower()
     {
-        SceneManager.LoadScene("TorreInfinita");
+        SceneManager.LoadScene("Level X");
     }
 }
