@@ -21,7 +21,6 @@ public class Spawner : MonoBehaviour
         {
             float yPosition = spawnPosition.y + (i * spawnIntervalY);
 
-            Quaternion fixedRotation = Quaternion.Euler(0, 0, -90);
 
             if (i % 50 == 0)
             {
@@ -32,6 +31,8 @@ public class Spawner : MonoBehaviour
             {
                 Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
                 Instantiate(platformPrefab, new Vector3(spawnPosition.x, yPosition, spawnPosition.z), randomRotation);
+                Quaternion fixedRotation = Quaternion.Euler(0, 0, -90);
+
             }
         }
     }
