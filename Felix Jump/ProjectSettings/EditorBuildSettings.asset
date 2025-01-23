@@ -75,6 +75,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FelixJumpDX/Niveles/Level 4.unity
     guid: e9ed2b77ef229a64baa7510acdbca7e7
   - enabled: 1
+    path: Assets/Scenes/FelixJumpDX/Niveles/Level X.unity
+    guid: 3744caded828deb4cb0f416980db75f5
+  - enabled: 1
     path: Assets/Scenes/FelixJumpDX/Level Selector.unity
     guid: 52a1a5c0636606441bac59837aaab81e
   - enabled: 1
