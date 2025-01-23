@@ -168,7 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cylinderPrefab: {fileID: 2288850501915128538, guid: e9e2bdbe3f945b44f8d660b9a0e7f50c,
     type: 3}
-  platformPrefab: {fileID: 0}
+  platformPrefab: {fileID: 6653656642274086861, guid: 00a5cca4159216c47869b9d357bdad05,
+    type: 3}
   maxObjects: 100
   spawnIntervalY: 5
   spawnPosition: {x: 0, y: 0, z: 0}

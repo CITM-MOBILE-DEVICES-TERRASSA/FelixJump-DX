@@ -52,4 +52,6 @@ public class GeneralScore : MonoBehaviour
             highScoreText.text = "Global HighScore: " + totalScore;
         }
     }
+    
+    
 }

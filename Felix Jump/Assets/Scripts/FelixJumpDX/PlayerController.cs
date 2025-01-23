@@ -15,11 +15,6 @@ public class PlayerController : MonoBehaviour
         _pb = FindObjectOfType<PlayerBounce>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     void OnMove(InputValue value)
     {
