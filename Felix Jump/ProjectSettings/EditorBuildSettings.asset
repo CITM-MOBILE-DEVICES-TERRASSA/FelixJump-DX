@@ -104,6 +104,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jumping Jack/Scenes/Meta2-Lvl1.unity
     guid: e4f83dfded35ca042b73a38589855113
+  - enabled: 1
+    path: Assets/Scenes/FelixJumpDX/Niveles/Level X.unity
+    guid: 3744caded828deb4cb0f416980db75f5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 81f8080e672b2ba40af660099d3360b4,
       type: 2}
