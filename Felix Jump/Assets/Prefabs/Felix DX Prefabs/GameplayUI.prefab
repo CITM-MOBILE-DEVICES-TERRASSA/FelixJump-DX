@@ -318,7 +318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryScreen: {fileID: 7171156401762383279}
-  scoreText: {fileID: 0}
+  highScorePopup: {fileID: 2635146228868966555}
+  scoreText: {fileID: 5429570636164183879}
 --- !u!1 &2693602103418018363
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &279704697785050564
 RectTransform:
   m_ObjectHideFlags: 0
