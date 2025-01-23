@@ -26,11 +26,23 @@ public class Spawner : MonoBehaviour
                 Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0) * platformPrefab.transform.rotation;
 
                 // Instanciar la plataforma como hija del objeto con el script
-                Instantiate(platformPrefab, 
-                            new Vector3(spawnPosition.x, yPosition, spawnPosition.z), 
-                            randomRotation, 
-                            this.transform);
+                GameObject platform = Instantiate(platformPrefab, 
+                                                  new Vector3(spawnPosition.x, yPosition, spawnPosition.z), 
+                                                  randomRotation, 
+                                                  this.transform);
+
+                // Cambiar el color de la plataforma a un color aleatorio
+                Renderer platformRenderer = platform.GetComponent<Renderer>();
+                if (platformRenderer != null)
+                {
+                    platformRenderer.material.color = GetRandomColor();
+                }
             }
         }
+    }
+
+    private Color GetRandomColor()
+    {
+        return new Color(Random.value, Random.value, Random.value);
     }
 }
