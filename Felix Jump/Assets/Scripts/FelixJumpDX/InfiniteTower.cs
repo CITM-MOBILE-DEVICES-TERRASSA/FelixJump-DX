@@ -3,7 +3,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [Header("Prefabs")]
-    public GameObject cylinderPrefab; 
     public GameObject platformPrefab;
 
     [Header("Spawn Settings")]
@@ -21,15 +20,6 @@ public class Spawner : MonoBehaviour
         for (int i = 1; i <= maxObjects; i++)
         {
             float yPosition = spawnPosition.y + (i * spawnIntervalY);
-
-            if (i % 50 == 0)
-            {
-                // Instanciar el cilindro como hijo del objeto con el script
-                Instantiate(cylinderPrefab, 
-                            new Vector3(spawnPosition.x, yPosition, spawnPosition.z), 
-                            Quaternion.identity, 
-                            this.transform);
-            }
 
             if (i % 5 == 0)
             {
