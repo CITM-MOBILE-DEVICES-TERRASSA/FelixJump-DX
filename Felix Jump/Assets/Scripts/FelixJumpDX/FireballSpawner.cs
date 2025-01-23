@@ -11,16 +11,18 @@ public class FireballSpawner : MonoBehaviour
     IEnumerator Start()
     {
 
+        yield return new WaitForSeconds(Random.Range(0, FireballSpawnInterval));
+        
         while (true)
             yield return SpawnFireball();
     }
 
     IEnumerator SpawnFireball()
     {
-        yield return new WaitForSeconds(FireballSpawnInterval);
-        
         var f = Instantiate(FireballPrefab, transform.position, transform.rotation);
         f.transform.parent = transform;
+        
+        yield return new WaitForSeconds(FireballSpawnInterval);
     }
     
 }
