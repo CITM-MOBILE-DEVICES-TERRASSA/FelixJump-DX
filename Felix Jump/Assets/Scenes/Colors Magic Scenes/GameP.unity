@@ -9931,8 +9931,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2020736363}
-  - component: {fileID: 2020736364}
   - component: {fileID: 2020736365}
+  - component: {fileID: 2020736364}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged

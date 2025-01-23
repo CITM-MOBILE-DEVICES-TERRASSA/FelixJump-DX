@@ -28,7 +28,7 @@ public class GameplayManager : MonoBehaviour
 
     public void ReturnToLobby()
     {
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("GameSelector");
         int totalScore = PlayerPrefs.GetInt("totalScore", 0);
         PlayerPrefs.SetInt("totalScore", totalScore + currentScore);
         Time.timeScale = 1.0f;
@@ -68,6 +68,11 @@ public class GameplayManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Level2")
         {
             SceneManager.LoadScene("Level3");
+            Time.timeScale = 1.0f;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3")
+        {
+            SceneManager.LoadScene("Level1");
             Time.timeScale = 1.0f;
         }
     }

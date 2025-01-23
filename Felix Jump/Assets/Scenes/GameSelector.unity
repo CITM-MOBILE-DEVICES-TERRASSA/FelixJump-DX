@@ -1361,6 +1361,11 @@ PrefabInstance:
       propertyPath: m_text
       value: Colors Magic
       objectReference: {fileID: 0}
+    - target: {fileID: 5370276377033274622, guid: 3d3fe9132e2114f8789d287dc1014795,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7601616373367458359, guid: 3d3fe9132e2114f8789d287dc1014795,
         type: 3}
       propertyPath: m_Name
@@ -2732,7 +2737,7 @@ GameObject:
   - component: {fileID: 2333171454438580025}
   - component: {fileID: 3737103062508385490}
   m_Layer: 0
-  m_Name: Score
+  m_Name: GeneralScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
