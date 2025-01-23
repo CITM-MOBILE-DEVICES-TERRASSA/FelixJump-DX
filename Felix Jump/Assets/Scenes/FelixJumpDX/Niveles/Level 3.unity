@@ -5283,6 +5283,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3dadc1f1561f24bc4b8e10e7d8c02bd5, type: 2}
     - target: {fileID: 4126397798634000356, guid: 78924075aad57b14b94665031cffe275,
         type: 3}
+      propertyPath: maxBounceForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126397798634000356, guid: 78924075aad57b14b94665031cffe275,
+        type: 3}
       propertyPath: moveAction.m_Name
       value: Move
       objectReference: {fileID: 0}
@@ -5339,6 +5344,11 @@ PrefabInstance:
     - target: {fileID: 8573608950933459182, guid: 78924075aad57b14b94665031cffe275,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8573608950933459182, guid: 78924075aad57b14b94665031cffe275,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

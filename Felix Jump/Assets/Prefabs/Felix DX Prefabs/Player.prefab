@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5801171074979619847}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minBounceForce: 2
-  maxBounceForce: 10
+  maxBounceForce: 13
   bounceForce: 5
 --- !u!114 &5801171074979619847
 MonoBehaviour:
