@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3739674759673237850}
   - component: {fileID: 923579251961192736}
   - component: {fileID: 3394473687327660269}
-  - component: {fileID: 8751755622788373809}
   - component: {fileID: 3639647307717209468}
   m_Layer: 0
   m_Name: Rock6
@@ -42,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3538854273187105276}
-  m_Mesh: {fileID: -8892367932362222593, guid: ba8ad55c52432c9458973a60328b3451, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c8e5dbd0279404f47898113147f8f42f, type: 3}
 --- !u!23 &3394473687327660269
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8751755622788373809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3538854273187105276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b8c7d88eebb9940b3c4196017b84df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fractured: {fileID: 5850001623458330267, guid: a024271adb4d00a43904106a318d260c,
-    type: 3}
 --- !u!64 &3639647307717209468
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -120,4 +105,4 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -8892367932362222593, guid: ba8ad55c52432c9458973a60328b3451, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c8e5dbd0279404f47898113147f8f42f, type: 3}
