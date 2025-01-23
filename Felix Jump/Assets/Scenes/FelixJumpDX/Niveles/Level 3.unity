@@ -5412,7 +5412,7 @@ PrefabInstance:
     - target: {fileID: 4126397798634000356, guid: 78924075aad57b14b94665031cffe275,
         type: 3}
       propertyPath: maxBounceForce
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4126397798634000356, guid: 78924075aad57b14b94665031cffe275,
         type: 3}
