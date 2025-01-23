@@ -9,7 +9,6 @@ TagManager:
   - Meta
   - MainCylindre
   - Trampa
-
   layers:
   - Default
   - TransparentFX
@@ -17,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Obstacles
   - 
   - 
   - 
