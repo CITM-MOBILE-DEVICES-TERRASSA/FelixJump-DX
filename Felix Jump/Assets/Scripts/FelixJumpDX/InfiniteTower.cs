@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
 
             if (i % 5 == 0)
             {
-                Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+                Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0) * platformPrefab.transform.rotation;
                 Instantiate(platformPrefab, new Vector3(spawnPosition.x, yPosition, spawnPosition.z), randomRotation);
                 Quaternion fixedRotation = Quaternion.Euler(0, 0, -90);
 
