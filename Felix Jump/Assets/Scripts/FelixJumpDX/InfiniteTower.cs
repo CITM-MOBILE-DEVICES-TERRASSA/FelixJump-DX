@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     public int maxObjects = 100; 
     public float spawnIntervalY = 5f;
     public Vector3 spawnPosition = new Vector3(0, 0, 0); 
+
     private void Start()
     {
         SpawnObjects();
@@ -21,18 +22,24 @@ public class Spawner : MonoBehaviour
         {
             float yPosition = spawnPosition.y + (i * spawnIntervalY);
 
-
             if (i % 50 == 0)
             {
-                Instantiate(cylinderPrefab, new Vector3(spawnPosition.x, yPosition, spawnPosition.z), Quaternion.identity);
+                // Instanciar el cilindro como hijo del objeto con el script
+                Instantiate(cylinderPrefab, 
+                            new Vector3(spawnPosition.x, yPosition, spawnPosition.z), 
+                            Quaternion.identity, 
+                            this.transform);
             }
 
             if (i % 5 == 0)
             {
                 Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0) * platformPrefab.transform.rotation;
-                Instantiate(platformPrefab, new Vector3(spawnPosition.x, yPosition, spawnPosition.z), randomRotation);
-                Quaternion fixedRotation = Quaternion.Euler(0, 0, -90);
 
+                // Instanciar la plataforma como hija del objeto con el script
+                Instantiate(platformPrefab, 
+                            new Vector3(spawnPosition.x, yPosition, spawnPosition.z), 
+                            randomRotation, 
+                            this.transform);
             }
         }
     }
