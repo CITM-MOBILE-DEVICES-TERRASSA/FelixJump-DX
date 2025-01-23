@@ -30,8 +30,19 @@ public class FJDXScore : MonoBehaviour
         {
             Debug.Log("Goal Reached!");
             GoalReached = true;
+            var victoryScreen = FindObjectOfType<OnVictoryScript>();
+            if (victoryScreen)
+            {
+                victoryScreen.scoreText.text += CalculateScore();
+                
+                
+                victoryScreen.ShowVictoryScreen();
+            }
         }
     }
-    
-    
+
+    private int CalculateScore()
+    {
+        return platformsReached.Count * 10 + Mathf.Max(300 - (int)timeElapsed, 0) * 5;
+    }
 }

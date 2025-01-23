@@ -9,6 +9,7 @@ TagManager:
   - Meta
   - MainCylindre
   - Trampa
+  - PlataformaBase
   layers:
   - Default
   - TransparentFX

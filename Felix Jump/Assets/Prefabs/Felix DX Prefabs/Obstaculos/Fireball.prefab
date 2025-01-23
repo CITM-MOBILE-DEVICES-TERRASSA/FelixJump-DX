@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2091229455096017256}
   - component: {fileID: 355973088927960598}
   - component: {fileID: 3348093402765317949}
+  - component: {fileID: -8377186062691446981}
   m_Layer: 6
   m_Name: Fireball
   m_TagString: Untagged
@@ -99,6 +100,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impulsePower: 5
   rotationPower: 0.25
+--- !u!114 &-8377186062691446981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382812130748326484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34e4c7a7d27b4681860fe03bb2f7f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3537720246354936651
 GameObject:
   m_ObjectHideFlags: 0

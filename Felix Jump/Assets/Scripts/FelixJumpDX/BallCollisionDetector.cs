@@ -4,7 +4,7 @@ public class BallCollisionDetector : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Plataforma") || collision.gameObject.CompareTag("Meta"))
+        if (collision.gameObject.CompareTag("PlataformaBase") || collision.gameObject.CompareTag("Plataforma") || collision.gameObject.CompareTag("Meta"))
         {
             Transform platformTransform = collision.gameObject.transform;
 
